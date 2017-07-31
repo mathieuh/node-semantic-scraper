@@ -22,7 +22,7 @@ function HttpFetcherStream(options) {
     Transform.call(this, {
         "objectMode": true
     });
-    this.limiter = new RateLimiter(this.options.rateCount, this.options.rateCount);
+    this.limiter = new RateLimiter(this.options.rateCount, this.options.rateWindow);
 }
 util.inherits(HttpFetcherStream, Transform);
 
